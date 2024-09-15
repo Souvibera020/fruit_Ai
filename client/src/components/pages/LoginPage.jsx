@@ -30,26 +30,28 @@ function LoginPage() {
   };
 
   return (
-    <div className="h-screen w-screen flex items-center justify-center bg-yellow-50">
-      <div className="bg-white border-2 border-gray-200 shadow-xl rounded-2xl grid-cols-1 lg:grid-cols-2">
+    <div className="h-screen w-screen flex items-center justify-center bg-gradient-to-br from-green-200 to-yellow-100">
+      <div className="bg-white border-2 border-blue-300 shadow-xl rounded-2xl grid-cols-1 lg:grid-cols-2">
         <div className="flex flex-col justify-center p-6 lg:p-12">
-          <h2 className="text-2xl lg:text-4xl text-center mb-6">
+          <h2 className="text-2xl lg:text-4xl text-center mb-6 text-gray-800">
             {activeTab === "login" ? "Login" : "Register"}
           </h2>
-          <p className="text-center mb-6 text-gray-500 text-sm lg:text-base">
-            {activeTab === "login"
-              ? <>
-                  By signing in you are agreeing to our
-                  <a href="#" className="text-blue-500 hover:underline ml-1">
-                    Terms and Privacy Policy
-                  </a>
-                </>
-              : <>
-                  By signing up, you agree to our
-                  <a href="#" className="text-blue-500 hover:underline ml-1">
-                    Terms and Privacy Policy
-                  </a>
-                </>}
+          <p className="text-center mb-6 text-gray-600 text-sm lg:text-base">
+            {activeTab === "login" ? (
+              <>
+                By signing in you are agreeing to our
+                <a href="#" className="text-purple-500 hover:underline ml-1">
+                  Terms and Privacy Policy
+                </a>
+              </>
+            ) : (
+              <>
+                By signing up, you agree to our
+                <a href="#" className="text-purple-500 hover:underline ml-1">
+                  Terms and Privacy Policy
+                </a>
+              </>
+            )}
           </p>
 
           <div className="flex items-center justify-center w-full">
@@ -59,7 +61,7 @@ function LoginPage() {
                   href="#"
                   className={`text-opacity-90 border-b-2 py-2 transition-all ${
                     activeTab === "login"
-                      ? "text-blue-500 border-black font-semibold"
+                      ? "text-purple-500 border-purple-500 font-semibold"
                       : "text-gray-400 border-transparent"
                   }`}
                   onClick={() => setActiveTab("login")}
@@ -70,7 +72,7 @@ function LoginPage() {
                   href="#"
                   className={`text-opacity-90 border-b-2 py-2 transition-all ${
                     activeTab === "register"
-                      ? "text-blue-500 border-black font-semibold"
+                      ? "text-purple-500 border-purple-500 font-semibold"
                       : "text-gray-400 border-transparent"
                   }`}
                   onClick={() => setActiveTab("register")}
@@ -83,14 +85,14 @@ function LoginPage() {
                   <input
                     placeholder="Email Address"
                     type="email"
-                    className="border-b-2 focus:outline-none p-2"
+                    className="border-b-2 focus:outline-none p-2 bg-purple-50"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
                   <input
                     placeholder="Password"
                     type="password"
-                    className="border-b-2 focus:outline-none p-2"
+                    className="border-b-2 focus:outline-none p-2 bg-purple-50"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />
@@ -99,12 +101,12 @@ function LoginPage() {
                       <input type="checkbox" className="mr-2" />
                       Remember me
                     </div>
-                    <a href="#" className="text-blue-500 hover:underline">
+                    <a href="#" className="text-purple-500 hover:underline">
                       Forgot Password?
                     </a>
                   </div>
                   <button
-                    className="rounded p-2 bg-blue-500 text-white hover:bg-blue-600"
+                    className="rounded p-2 bg-purple-500 text-white hover:bg-purple-600"
                     onClick={handleLogin}
                   >
                     Login
@@ -114,28 +116,30 @@ function LoginPage() {
                     <div className="flex justify-center gap-4 mt-2">
                       <a
                         href="#"
-                        className="text-gray-600 hover:text-blue-500"
+                        className="text-gray-600 hover:text-purple-500"
                       >
                         <i className="fab fa-facebook-f fa-lg"></i>
                       </a>
                       <a
                         href="#"
-                        className="text-gray-600 hover:text-blue-500"
+                        className="text-gray-600 hover:text-purple-500"
                       >
                         <i className="fab fa-instagram fa-lg"></i>
                       </a>
                       <a
                         href="#"
-                        className="text-gray-600 hover:text-blue-500"
+                        className="text-gray-600 hover:text-purple-500"
                       >
                         <i className="fab fa-linkedin-in fa-lg"></i>
                       </a>
                     </div>
                     <div className="text-center mt-4">
-                      <button className="rounded p-2 bg-blue-300 text-blue-700 hover:bg-gray-400">
+                      <button className="rounded p-2 bg-purple-300 text-purple-700 hover:bg-gray-400">
                         <i className="fas fa-fingerprint fa-lg"></i>
                       </button>
-                        <p className="text-gray-300 py-2">email-user@example.com && password-password123</p>
+                      <p className="text-gray-300 py-2">
+                        email-user@example.com && password-password123
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -146,21 +150,21 @@ function LoginPage() {
                   <input
                     placeholder="Email Address"
                     type="email"
-                    className="border-b-2 focus:outline-none p-2"
+                    className="border-b-2 focus:outline-none p-2 bg-blue-50"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
                   <input
                     placeholder="Password"
                     type="password"
-                    className="border-b-2 focus:outline-none p-2"
+                    className="border-b-2 focus:outline-none p-2 bg-blue-50"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />
                   <input
                     placeholder="Confirm Password"
                     type="password"
-                    className="border-b-2 focus:outline-none p-2"
+                    className="border-b-2 focus:outline-none p-2 bg-blue-50"
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                   />
